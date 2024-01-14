@@ -1,0 +1,177 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    margin-left: 1.4rem;
+}
+
+.navbar {
+    color: rgb(255, 59, 92);
+}
+
+.navbarCont {
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbarRest {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin-right: 1.3rem;
+}
+
+.navbarDispNONE {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accountDisp {
+    display: none;
+}
+
+.login,
+.signup {
+    margin: 0.5rem;
+    padding: 0.10rem 0.3rem 0.10rem 0.3rem;
+    border-radius: 6px;
+    border: 2px solid transparent;
+}
+
+.languageSelect {
+    width: 19px;
+    align-items: center;
+    background-color: transparent;
+    border: 2px solid transparent;
+    margin-right: 0.5rem;
+    color: rgb(255, 59, 92);
+}
+
+.shoppingCart {
+    background-color: transparent;
+    border: 2px solid transparent;
+}
+
+@media screen and (max-width:950px) {
+
+    .navbarDispNONE {
+        display: none;
+    }
+
+    .navbarCont {
+        text-align: center;
+    }
+
+    .accountDisp {
+        display: block;
+        margin-left: 1.4rem;
+        font-size: large;
+        cursor: pointer;
+        width: 20px;
+        z-index: 1;
+    }
+}
+
+.accountModel {
+    z-index: 1;
+    background-color: rgba(151, 146, 146, 0.447);
+    width: 100%;
+    position: absolute;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accountModelCont {
+    color: black;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 63%;
+    height: 430px;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.facebookBtn,
+.googleBtn,
+.appleBtn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 40px;
+}
+
+.facebookBtn {
+    background-color: #316FF6;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.googleBtn {
+    border: 1px solid white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.appleBtn {
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.accountBtns {
+    width: 100%;
+}
+
+.loginModelBtn,
+.signupModelBtn {
+    height: 45px;
+    background-color: rgb(255, 59, 92);
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.signupModelBtn {
+    background-color: white;
+    border: 1px solid rgb(255, 59, 92);
+    color: rgb(255, 59, 92);
+}
+
+.closeModal {
+    position: absolute;
+    right: 135px;
+    top: 68px;
+    color: rgb(255, 59, 92);
+    border-radius: 20px;
+    width: 28px;
+    height: 28px;
+    border: 1px solid transparent;
+    font-size: 22px;
+    font-weight: bold;
+    border: 1px solid rgb(217, 217, 217);
+    background-color: white;
+    cursor: pointer;
+}
+
+.accountModelHide {
+    display: none;
+}
