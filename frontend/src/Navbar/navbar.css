@@ -8,6 +8,8 @@
 .logo {
     display: flex;
     margin-left: 1.4rem;
+    z-index: 1;
+    cursor: pointer;
 }
 
 .navbar {

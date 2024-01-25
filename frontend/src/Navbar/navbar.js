@@ -1,18 +1,22 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { LiaShoppingBagSolid } from "react-icons/lia";
 import { IoGlobeOutline } from "react-icons/io5";
 import { RiAccountCircleLine } from "react-icons/ri";
 import { FaFacebook, FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import {LoginSocialFacebook} from 'reactjs-social-login';
+import {FacebookLoginButton} from 'react-social-login-buttons';
 import './navbar.css'
 
 const Navbar = () => {
     const [accountClick,setAccountClick] = useState(false);
+    const navigate = useNavigate();
   return (
     <main className='navbar'>
         <section className='navbarCont'>
             <RiAccountCircleLine onClick={()=>setAccountClick(!accountClick)} className='accountDisp'/>
-            <div className='logo'>
+            <div className='logo' onClick={()=>navigate('/')}>
                 <h2>DeliveryEats</h2>
             </div>
             <div className='navbarRest'>
@@ -40,12 +44,25 @@ const Navbar = () => {
                 <button onClick={()=>setAccountClick(!accountClick)} className='closeModal'>X</button>
                 <p style={{fontSize:'22px',fontWeight:'bold'}}>Welcome!</p>
                 <p style={{fontSize:'14px'}}>Sign up or log in to continue </p>
-                <button className='facebookBtn'><FaFacebook style={{fontSize:'25px',marginLeft:'0.6rem',color:'white'}}/><article className='accountBtns'>Continue with Facebook</article></button>
+                <LoginSocialFacebook
+                appId='1849803115452107'
+                onResolve={(response) => console.log(response)}
+                onReject={(error) => console.log(error)}
+                >
+                    <FacebookLoginButton/>
+                {/* <button className='facebookBtn'><FaFacebook style={{fontSize:'25px',marginLeft:'0.6rem',color:'white'}}/><article className='accountBtns'>Continue with Facebook</article></button> */}
+                </LoginSocialFacebook>
                 <button className='googleBtn'><FcGoogle style={{fontSize:'25px',marginLeft:'0.6rem'}}/><article className='accountBtns'>Continue with Google</article></button>
                 <button className='appleBtn'><FaApple style={{fontSize:'25px',marginLeft:'0.6rem',color:'white'}}/><article className='accountBtns'>Continue with Apple</article></button>
                 <p style={{textAlign:'center'}}>or</p>
-                <button className='loginModelBtn'>Log in</button>
-                <button className='signupModelBtn'>Sign up</button>
+                <button onClick={()=>{
+                    navigate('/signin');
+                    setAccountClick(!accountClick);
+                    }} className='loginModelBtn'>Log in</button>
+                <button onClick={()=>{
+                    navigate('/signup');
+                    setAccountClick(!accountClick);
+                    }} className='signupModelBtn'>Sign up</button>
             </section>
         </div>
     </main>

@@ -1,9 +1,9 @@
 import express from "express";
 import bodyParser from "body-parser";
-import update from "./insMongo";
-import user from "./userMongo";
-import restaurents from "./RestMongo";
-import products from "./prodMongo";
+import update from "./insMongo.js";
+import user from "./userMongo.js";
+import restaurents from "./RestMongo.js";
+import products from "./prodMongo.js";
 import cors from 'cors';
 const app = express();
 app.use(cors());
@@ -25,13 +25,13 @@ app.post('/api/signup', async (req, res) => {
   if(userExists){
     return res.status(201).send('User Account Already Exists');
   }
-  if(restExists){
-    return res.status(201).send('Rest Account Already Exists');
-  }
-  if(!restExists) {
-    await restaurents.create({Email: req.body.email, Password: req.body.password});
-    return res.status(200).send('Rest Account Created');
-  }
+  // if(restExists){
+  //   return res.status(201).send('Rest Account Already Exists');
+  // }
+  // if(!restExists) {
+  //   await restaurents.create({Email: req.body.email, Password: req.body.password});
+  //   return res.status(200).send('Rest Account Created');
+  // }
   else {
     await user.create({Email: req.body.email, Password: req.body.password});
     return res.status(200).send('User Account Created');
